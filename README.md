@@ -1,1 +1,1 @@
-# springboot-jpa-eclipsellink
+# springboot-jpa-hibernate
