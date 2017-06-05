@@ -6,7 +6,7 @@
 
     <groupId>org.newtutorials</groupId>
     <version>1.0-SNAPSHOT</version>
-
+    <artifactId>springboot-jpa-hibernate</artifactId>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
