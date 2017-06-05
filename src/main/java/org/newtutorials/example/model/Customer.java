@@ -7,6 +7,8 @@ import java.util.List;
  * Created by dani on 5/20/2017.
  */
 @Entity
+//@NamedEntityGraph(name = "Customer.orders",
+//        attributeNodes = @NamedAttributeNode("orders"))
 public class Customer {
 
     @Id
@@ -16,10 +18,11 @@ public class Customer {
     @Column(name = "NAME", length = 64)
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL
-            , mappedBy = "customer", fetch = FetchType.LAZY, orphanRemoval = true
-    )
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer", fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Order> orders;
+
+    @Version
+    private Long version;
 
     public Customer() {
     }
@@ -58,6 +61,7 @@ public class Customer {
         return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", version=" + version +
                 ", orders=" + orders +
                 '}';
     }
